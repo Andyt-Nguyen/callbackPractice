@@ -31,7 +31,7 @@ and what you should write is the sayHi function that makes the code above work,
 
 
 	first(names, function(firstName){
-	  console.log('The first name in names is ' + firstName[0]);
+	  console.log('The first name in names is ' + firstName);
 	});
 
 
@@ -72,7 +72,6 @@ var contains = function(a,b,cb){
 		if(a[i] === b){
 			cb(true)
 		}
-			cb(false)
 	}
 }
 
@@ -112,15 +111,15 @@ contains(names, 'Colt', function(result){
 
     //Code Here
 
-	function each(arr, cb){
-		for(var i = 0; i < newArr.length; i++){
-		var indexes = newArr.indexOf(arr[i]);
+function each(arr, cb){
+	for(var i = 0; i < newArr.length; i++){
+		var indexes = newArr.indexOf(newArr[i]);
 		cb(newArr[i], indexes);
 	}
 }
-		each(names, function(item, indice){
-		console.log('The item in the ' + indice + ' position is ' + item)
-		});
+each(names, function(item, indice){
+	console.log('The item in the ' + indice + ' position is ' + item)
+});
 
 
 
@@ -128,6 +127,13 @@ contains(names, 'Colt', function(result){
 // and returns that user.
 
  //Code Here
+ function getUserById(arr, id, cb){
+	 for(var i = 0; i < arr.length; i++){
+		 if(arr[i].id === id){
+			 cb(arr[i]);
+		 }
+	 }
+ }
 
 var users = [
   {
