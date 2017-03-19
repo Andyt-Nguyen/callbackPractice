@@ -72,6 +72,7 @@ var contains = function(a,b,cb){
 		if(a[i] === b){
 			cb(true)
 		}
+		cb(false);
 	}
 }
 
